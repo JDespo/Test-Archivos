@@ -1,0 +1,9 @@
+ 		 Nombre Materia: Prog00.txt 	
+ Nombre: Jota 	Legajo: 2151 	Nota: 8.00
+ Nombre: Daian 	Legajo: 543 	Nota: 9.00
+ 		 Nombre Materia: Prog01.txt 	
+ Nombre: Jota 	Legajo: 2151 	Nota: 8.00
+ Nombre: Daian 	Legajo: 543 	Nota: 9.00
+ 		 Nombre Materia: Prog02.txt 	
+ Nombre: Jota 	Legajo: 2151 	Nota: 8.00
+ Nombre: Daian 	Legajo: 543 	Nota: 9.00
