@@ -18,8 +18,8 @@ int main()
      for(int i=0; i<3 ; i++)
      {
          STR_ALUMNOS alumno;
-        //FILE *pArchivo = Open (materias[i].nombre,"a+");  //Segmentation fault (`core' generado)
-        FILE *pArchivo = Open ("Prog01.txt","a+"); // SI funciona
+        FILE *pArchivo = Open (materias[i].nombre,"a+");
+        
 
         printf("\n \t\t Nombre Materia: %s \t\n",materias[i].nombre);
         fprintf(pArchivoN," \t\t Nombre Materia: %s \t\n",materias[i].nombre);
