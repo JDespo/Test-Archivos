@@ -31,7 +31,7 @@ int main()
 
             printf("Nombre: %s\n", alumno.nombre);
             printf("Legajo: %s\n", alumno.legajo);
-            printf("Promedio: %.2f\n", alumno.promedio);
+            printf("Promedio: %.2f\n\n", alumno.promedio);
             if (alumno.promedio > 5)
             {
                 fprintf(pArchivoN," Nombre: %s \tLegajo: %s \tNota: %0.2f\n",alumno.nombre,alumno.legajo,alumno.promedio);
