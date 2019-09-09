@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "funciones.h"
 
 
@@ -12,37 +9,33 @@ int main()
     strcpy(materias[1].nombre, "Prog01.txt");
     strcpy(materias[2].nombre, "Prog02.txt");
     
-    FILE *pArchivoN = Open ("NotasFinales.txt","a+");
-    char linea[50];
+    FILE *pArchivoN = Open("NotasFinales.txt","w");
+    char linea[l_linea];
     
-     for(int i=0; i<3 ; i++)
+     for(int i = 0; i < 3 ; i++)
      {
          STR_ALUMNOS alumno;
-        FILE *pArchivo = Open (materias[i].nombre,"a+");
+        FILE *pArchivo = Open(materias[i].nombre,"r");  
         
+        char *materia = strtok(materias[i].nombre, ".");
+        printf("\n \t\t Nombre Materia: %s \t\n\n", materia);
+        fprintf(pArchivoN,"\n \t\t Nombre Materia: %s \t\n\n", materia);
 
-        printf("\n \t\t Nombre Materia: %s \t\n",materias[i].nombre);
-        fprintf(pArchivoN," \t\t Nombre Materia: %s \t\n",materias[i].nombre);
-
-        fgets(linea,50,pArchivo);
+        fgets(linea, l_linea, pArchivo);
         while(!feof(pArchivo))
         {
-            alumno = parcear (linea);
+            alumno = parcear(linea);
+            printf("Nombre: %s\t\tLegajo: %s\t\tPromedio: %.2f\n\n", alumno.nombre, alumno.legajo, alumno.promedio);// imprime todos los alumnos por pantalla
 
-            printf("Nombre: %s\n", alumno.nombre);
-            printf("Legajo: %s\n", alumno.legajo);
-            printf("Promedio: %.2f\n\n", alumno.promedio);
-            if (alumno.promedio > 5)
+            if (alumno.promedio >= nota)
             {
-                fprintf(pArchivoN," Nombre: %s \tLegajo: %s \tNota: %0.2f\n",alumno.nombre,alumno.legajo,alumno.promedio);
+                fprintf(pArchivoN, "Nombre: %s\t\tLegajo: %s\t\tPromedio: %.2f\n\n", alumno.nombre, alumno.legajo, alumno.promedio); // solo guarda aproados
             }
-            
-            fgets(linea,50,pArchivo);
-            
+            fgets(linea, l_linea, pArchivo);
         }
         fclose(pArchivo);
+        printf("Cierra archivo: \"%s\"\n\n", materia);
      }
     fclose(pArchivoN);
-  
+    printf("\n\tCierra archivo escritura con Notas Aprobados\n\n");
 }
-
