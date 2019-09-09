@@ -38,4 +38,6 @@ int main()
      }
     fclose(pArchivoN);
     printf("\n\tCierra archivo escritura con Notas Aprobados\n\n");
+    
+    return 0;
 }
