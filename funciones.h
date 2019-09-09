@@ -1,3 +1,6 @@
+#ifndef FUNCIONES_H_INCLUDES
+#define FUNCIONES_H_INCLUDES
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,3 +27,5 @@ typedef struct
 FILE* Open(const char* archivo, const char* modo);
 
 STR_ALUMNOS parcear (char linea[]);
+
+#endif 
